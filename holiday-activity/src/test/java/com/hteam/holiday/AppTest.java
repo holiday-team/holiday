@@ -1,5 +1,10 @@
 package com.hteam.holiday;
 
+import java.io.IOException;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -34,5 +39,13 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans-db.xml");
+        System.out.println(context);
+        
+        try {
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 }
