@@ -2,3 +2,5 @@
 holiday-*/.gitignore
 .project
 .settings/
+.idea/
+*.iml

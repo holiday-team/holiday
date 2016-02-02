@@ -1,9 +1,13 @@
+create database holiday_db;
+
+use holiday_db;
+
 drop table if exists user;
 
 create table user
 (
 	uid int auto_increment,
-	ucode varchar(10), --ÀàËÆQQºÅ
+	ucode varchar(10), --ç±»ä¼¼QQå·
 	name varchar(16),
 	mobile varchar(15),
 	email varchar(30),
@@ -20,15 +24,16 @@ create table address
 	addr_id int auto_increment,
 );
 
-
 drop table if exists region;
 
 create table region
 (
-	rid int auto_increment, --ĞĞÕşµØÇøID
-	parent_rid int , --¸¸ĞĞÕşµØÇøID
-	level int, --ĞĞÕş¼¶±ğ
-	name varchar(100), --µØÇøÃû³Æ
-	post_code varchar(20), --ÓÊÕş±àÂë
+	rid int auto_increment, /*è¡Œæ”¿åœ°åŒºID*/
+	parent_rid int , /*çˆ¶è¡Œæ”¿åœ°åŒºID*/
+	level int, /*è¡Œæ”¿çº§åˆ«*/
+	name varchar(100), /*åœ°åŒºåç§°*/
+	post_code varchar(20), /*é‚®æ”¿ç¼–ç */
 	primary key(rid)
 );
+
+select * from region;
