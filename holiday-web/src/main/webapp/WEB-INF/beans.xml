@@ -7,8 +7,8 @@
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 	<dubbo:application name="holiday-webapp"/>
-	
 	<dubbo:registry protocol="zookeeper" address="localhost:2181"></dubbo:registry>
-	
 	<dubbo:reference id="helloWorldService" interface="com.hteam.holiday.activity.service.HelloWorld"></dubbo:reference>
+	<dubbo:reference id="regionService" interface="com.hteam.holiday.region.service.RegionService"></dubbo:reference>
+	
 </beans>

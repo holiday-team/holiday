@@ -7,9 +7,11 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://code.alibabatech.com/schema/dubbo
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-	<import resource="classpath:beans.xml"/>	
-	<import resource="classpath:activity-dao.xml"/>	
-	<import resource="classpath:activity-service.xml" />
-	<import resource="classpath:activity-dubbo.xml"/>
+		
+	<dubbo:application name="holiday-region-service"/>
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+	<dubbo:protocol name="dubbo" port="20881"/>
+	
+	<dubbo:service interface="com.hteam.holiday.region.service.RegionService" ref="regionService"></dubbo:service>
 	
 </beans>        

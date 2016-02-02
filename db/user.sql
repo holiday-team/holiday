@@ -31,9 +31,10 @@ create table region
 	rid int auto_increment, /*行政地区ID*/
 	parent_rid int , /*父行政地区ID*/
 	level int, /*行政级别*/
-	name varchar(100), /*地区名称*/
-	post_code varchar(20), /*邮政编码*/
+	name varchar(100), /*地区中文名称*/
+	english_name varchar(100), /*英文名称*/
+	code varchar(20), /*行政编码*/
 	primary key(rid)
-);
+)charset gbk;
 
-select * from region;
+insert into region (parent_rid, level, name, english_name, code) values (0, 1, '中国', 'china', '100000');

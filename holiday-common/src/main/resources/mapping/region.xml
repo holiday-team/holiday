@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="holiday_region">
+	
+	<parameterMap type="com.hteam.holiday.region.domain.Region" id="region">
+		<parameter property="parentId" />
+		<parameter property="level"/>
+		<parameter property="name"/>
+		<parameter property="englishName"/>
+		<parameter property="code"/>
+	</parameterMap>
+
+	<insert id="insertRegion" parameterMap="region">
+		insert into region 
+		(
+			parent_rid, 
+			level, 
+			name, 
+			english_name, 
+			code
+		) 
+		values 
+		(
+			#{parentId}, 
+			#{level}, 
+			#{name}, 
+			#{englishName}, 
+			#{code}
+		)
+	</insert>
+</mapper>

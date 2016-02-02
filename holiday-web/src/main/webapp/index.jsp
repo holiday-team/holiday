@@ -2,11 +2,23 @@
 <%@page
 	import="org.springframework.web.context.support.WebApplicationContextUtils"%>
 <%@page import="org.springframework.web.context.WebApplicationContext"%>
+<%@page import="com.hteam.holiday.region.service.RegionService, com.hteam.holiday.region.domain.Region" %>
 <%@page contentType="text/html; charset=gbk"%>
 <%
 	WebApplicationContext context = WebApplicationContextUtils
 			.getWebApplicationContext(session.getServletContext());
 	HelloWorld hw = context.getBean(HelloWorld.class);
+	
+	RegionService rs = context.getBean(RegionService.class);
+	
+	Region region = new Region();
+	region.setCode("140000");
+	region.setEnglishName("shanxi");
+	region.setLevel(2);
+	region.setName("É½Î÷");
+	region.setParentId(1);
+	rs.saveRegion(region);
+	
 %>
 <html>
 <head>
@@ -20,7 +32,7 @@
 	type="text/css" rel="stylesheet"></link>
 </head>
 <body>
-	<h2><%=hw.sayHello("liangrui")%></h2>
+	<h2><%=hw.sayHello("zhangli") %></h2>
 
 
 	<div id="carousel-example-generic" class="carousel slide"

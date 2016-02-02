@@ -7,9 +7,10 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://code.alibabatech.com/schema/dubbo
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
 	<import resource="classpath:beans.xml"/>	
-	<import resource="classpath:activity-dao.xml"/>	
-	<import resource="classpath:activity-service.xml" />
-	<import resource="classpath:activity-dubbo.xml"/>
+	<import resource="classpath:region-dao.xml"/>	
+	<import resource="classpath:region-service.xml" />
+	<import resource="classpath:region-dubbo.xml"/>
 	
 </beans>        

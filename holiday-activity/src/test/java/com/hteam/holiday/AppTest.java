@@ -39,7 +39,7 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans-db.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans-activity.xml");
         System.out.println(context);
         
         try {
