@@ -40,12 +40,12 @@ public class AppTest
     {
         assertTrue( true );
         
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans-region.xml");
+        /*ApplicationContext context = new ClassPathXmlApplicationContext("beans-region.xml");
         
         try {
 			System.in.read();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
     }
 }

@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+	<import resource="classpath:activity-dao.xml"/>	
+	<import resource="classpath:activity-service.xml" />
+	<import resource="classpath:region-dao.xml"/>	
+	<import resource="classpath:region-service.xml" />
+		
+	<dubbo:application name="holiday-app"/>
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+	<dubbo:protocol name="dubbo" port="20880"/>
+	<dubbo:service interface="com.hteam.holiday.activity.service.HelloWorld" ref="helloWorldService"></dubbo:service>
+	<dubbo:service interface="com.hteam.holiday.region.service.RegionService" ref="regionService"></dubbo:service>
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>

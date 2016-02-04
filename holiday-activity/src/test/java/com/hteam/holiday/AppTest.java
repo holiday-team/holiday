@@ -39,14 +39,14 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans-activity.xml");
-        System.out.println(context);
+        /*ApplicationContext context = new ClassPathXmlApplicationContext("beans-activity.xml");
+        System.out.println(context);*/
         
-        try {
+        /*try {
 			System.in.read();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 		
     }
 }
