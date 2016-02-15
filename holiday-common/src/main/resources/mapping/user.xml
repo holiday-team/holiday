@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="holiday_user">
+	
+	<parameterMap type="com.hteam.holiday.user.domain.User" id="user">
+		<parameter property="ucode"/>
+		<parameter property="name"/>
+		<parameter property="mobile"/>
+		<parameter property="email"/>
+		<parameter property="password"/>
+		<parameter property="createTime"/>
+	</parameterMap>
+
+	<insert id="insertUser" parameterMap="user">
+		insert into user 
+		(
+			ucode, 
+			name, 
+			mobile, 
+			email, 
+			password,
+			create_time
+		) 
+		values 
+		(
+			#{ucode}, 
+			#{name}, 
+			#{mobile}, 
+			#{email}, 
+			#{password},
+			#{createTime}
+		)
+	</insert>
+</mapper>

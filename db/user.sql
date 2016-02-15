@@ -11,7 +11,7 @@ create table user
 	name varchar(16),
 	mobile varchar(15),
 	email varchar(30),
-	address varchar(10),
+	password varchar(18),
 	create_time datetime,
 	primary key(uid)
 );

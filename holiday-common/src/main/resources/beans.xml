@@ -11,12 +11,15 @@
 	<import resource="classpath:activity-service.xml" />
 	<import resource="classpath:region-dao.xml"/>	
 	<import resource="classpath:region-service.xml" />
-		
+	<import resource="classpath:user-dao.xml"/>	
+	<import resource="classpath:user-service.xml"/>
+	
 	<dubbo:application name="holiday-app"/>
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
 	<dubbo:protocol name="dubbo" port="20880"/>
 	<dubbo:service interface="com.hteam.holiday.activity.service.HelloWorld" ref="helloWorldService"></dubbo:service>
 	<dubbo:service interface="com.hteam.holiday.region.service.RegionService" ref="regionService"></dubbo:service>
+	<dubbo:service interface="com.hteam.holiday.user.service.RegisterService" ref="registerService"></dubbo:service>
 	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -32,6 +35,7 @@
 			<array>
 				<value>classpath:mapping/activity.xml</value>
 				<value>classpath:mapping/region.xml</value>
+				<value>classpath:mapping/user.xml</value>
 			</array>
 		</property>
 	</bean>
